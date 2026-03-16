@@ -3,97 +3,280 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naše svatba</title>
+  <meta name="robots" content="noindex" />
+  <title>Ruben & Alexandra | Naše svatba</title>
   <style>
+    :root {
+      --navy: #18324a;
+      --green: #2f5d50;
+      --white: #ffffff;
+      --offwhite: #f6f8f7;
+      --text: #21303a;
+      --border: #d8e1dd;
+      --shadow: 0 10px 30px rgba(24, 50, 74, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
       line-height: 1.6;
-      background: #fffaf7;
-      color: #333;
+      background: var(--offwhite);
+      color: var(--text);
     }
+
     header {
-      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--navy), var(--green));
+      color: var(--white);
       text-align: center;
-      background: #f3e9e2;
+      padding: 110px 20px 90px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-    section {
+
+    .hero-inner {
       max-width: 900px;
       margin: 0 auto;
-      padding: 40px 20px;
-      border-bottom: 1px solid #e6d8cf;
     }
-    h2 {
-      color: #7d5a50;
+
+    .subtitle {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 12px;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 3.8rem;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .date {
+      font-size: 1.35rem;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+
+    .welcome {
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 20px auto 0;
+      opacity: 0.96;
+    }
+
+    main {
+      padding: 50px 20px 70px;
+    }
+
+    section {
+      max-width: 950px;
+      margin: 0 auto 28px;
+    }
+
     .box {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: var(--white);
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
     }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: var(--navy);
+      font-size: 1.8rem;
+    }
+
+    .accent-line {
+      width: 70px;
+      height: 4px;
+      background: var(--green);
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-size: 1.04rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .info-card {
+      background: var(--offwhite);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--green);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+    }
+
+    .info-card strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 6px;
+      font-size: 0.96rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .timeline-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .timeline-time {
+      color: var(--green);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
+      background: var(--navy);
+      color: var(--white);
       text-align: center;
       padding: 30px 20px;
-      background: #f3e9e2;
+      font-size: 0.98rem;
     }
-    a {
-      color: #7d5a50;
+
+    @media (max-width: 700px) {
+      header {
+        padding: 80px 18px 70px;
+      }
+
+      header h1 {
+        font-size: 2.7rem;
+      }
+
+      .date {
+        font-size: 1.15rem;
+      }
+
+      .box {
+        padding: 22px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Jana & Petr</h1>
-    <p>20. června 2026</p>
-    <p>Těšíme se, že to oslavíte s námi</p>
+    <div class="hero-inner">
+      <div class="subtitle">Svatební oznámení</div>
+      <h1>Ruben & Alexandra</h1>
+      <p class="date">10. 10. 2026 ve 12:00</p>
+      <p class="welcome">Budeme moc rádi, když tento výjimečný den prožijete společně s námi.</p>
+    </div>
   </header>
 
-  <section>
-    <h2>O svatbě</h2>
-    <div class="box">
-      <p>Obřad se uskuteční dne <strong>20. června 2026</strong> ve <strong>13:00</strong>.</p>
-      <p>Místo: <strong>Zámek Example</strong>, Náměstí 1, Město.</p>
-    </div>
-  </section>
+  <main>
+    <section>
+      <div class="box">
+        <div class="accent-line"></div>
+        <h2>O svatbě</h2>
 
-  <section>
-    <h2>Harmonogram</h2>
-    <div class="box">
-      <p><strong>13:00</strong> Obřad</p>
-      <p><strong>14:00</strong> Společné focení a přípitek</p>
-      <p><strong>15:00</strong> Oběd</p>
-      <p><strong>18:00</strong> Večerní program</p>
-    </div>
-  </section>
+        <div class="info-grid">
+          <div class="info-card">
+            <strong>Novomanželé</strong>
+            Ruben a Alexandra
+          </div>
 
-  <section>
-    <h2>Důležité informace</h2>
-    <div class="box">
-      <p>Parkování bude zajištěno přímo u místa konání.</p>
-      <p>Dress code: elegantní / smart casual.</p>
-      <p>Kontakt na svědka: <a href="tel:+420123456789">+420 123 456 789</a></p>
-    </div>
-  </section>
+          <div class="info-card">
+            <strong>Termín</strong>
+            10. 10. 2026
+          </div>
 
-  <section>
-    <h2>Potvrzení účasti</h2>
-    <div class="box">
-      <p>Prosíme o potvrzení účasti do 31. května 2026.</p>
-      <p>Napište nám na: <a href="mailto:svatba@example.cz">svatba@example.cz</a></p>
-    </div>
-  </section>
+          <div class="info-card">
+            <strong>Čas obřadu</strong>
+            12:00
+          </div>
+
+          <div class="info-card">
+            <strong>Místo</strong>
+            Evangelický kostel Krnov
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="box">
+        <div class="accent-line"></div>
+        <h2>Harmonogram</h2>
+
+        <div class="timeline-item">
+          <span class="timeline-time">12:00</span>
+          Svatební obřad
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-time">po obřadu</span>
+          Gratulace a společné focení
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-time">následně</span>
+          Přesun na další program a společná oslava
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="box">
+        <div class="accent-line"></div>
+        <h2>Důležité informace</h2>
+        <p>Místem konání obřadu je <strong>evangelický kostel v Krnově</strong>.</p>
+        <p>Další organizační informace lze doplnit později, například parkování, dress code nebo následný přesun hostů.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="box">
+        <div class="accent-line"></div>
+        <h2>Potvrzení účasti</h2>
+        <p>Prosíme o potvrzení účasti nejpozději do <strong>10. 09. 2026</strong>.</p>
+        <p>Napište nám na e-mail: <a href="mailto:m4rlung@icloud.com">m4rlung@icloud.com</a></p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>S láskou se na vás těšíme ♥</p>
+    <p>Těšíme se na společný den ♥</p>
   </footer>
 </body>
 </html>
