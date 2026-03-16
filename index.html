@@ -11,7 +11,6 @@
       --steel-blue: #728fad;
       --sage-green: #8fa89a;
       --ivory: #f5f1e8;
-      --ivory-deep: #ece6da;
       --text: #4d5667;
       --line: #d8d0c3;
       --white: #ffffff;
@@ -26,24 +25,25 @@
     }
 
     body {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--text);
-  line-height: 1.75;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      line-height: 1.75;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(143,168,154,0.18) 0px, rgba(143,168,154,0.18) 220px, transparent 221px),
+        radial-gradient(circle at 85% 15%, rgba(114,143,173,0.16) 0px, rgba(114,143,173,0.16) 240px, transparent 241px),
+        radial-gradient(circle at 20% 85%, rgba(143,168,154,0.12) 0px, rgba(143,168,154,0.12) 200px, transparent 201px),
+        radial-gradient(circle at 90% 80%, rgba(114,143,173,0.12) 0px, rgba(114,143,173,0.12) 200px, transparent 201px),
+        var(--ivory);
+      min-height: 100vh;
+    }
 
-  background:
-    radial-gradient(circle at 15% 20%, rgba(143,168,154,0.18) 0px, rgba(143,168,154,0.18) 220px, transparent 221px),
-    radial-gradient(circle at 85% 15%, rgba(114,143,173,0.16) 0px, rgba(114,143,173,0.16) 240px, transparent 241px),
-    radial-gradient(circle at 20% 85%, rgba(143,168,154,0.12) 0px, rgba(143,168,154,0.12) 200px, transparent 201px),
-    radial-gradient(circle at 90% 80%, rgba(114,143,173,0.12) 0px, rgba(114,143,173,0.12) 200px, transparent 201px),
-    var(--ivory);
-}
     .page {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 0 24px 90px;
-  position: relative;
-}
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 90px;
+      position: relative;
+    }
 
     .page::before,
     .page::after {
@@ -87,7 +87,7 @@
 
     h1 {
       margin: 0;
-      font-size: 4rem;
+      font-size: 3.6rem;
       font-weight: 400;
       line-height: 1.08;
       color: var(--dark-navy);
@@ -189,11 +189,81 @@
       color: var(--dark-navy);
     }
 
-    .note-box {
+    .note-box,
+    .parking-map-box {
       background: rgba(255, 255, 255, 0.28);
       border: 1px solid rgba(216, 208, 195, 0.7);
       border-radius: 18px;
       padding: 20px 22px;
+    }
+
+    .form-field {
+      margin-bottom: 16px;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--dark-navy);
+      font-size: 1rem;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(216, 208, 195, 0.95);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+    }
+
+    .form-field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid var(--steel-blue);
+      border-radius: 999px;
+      background: var(--steel-blue);
+      color: white;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .submit-button:hover {
+      opacity: 0.9;
+    }
+
+    .parking-map {
+      margin-top: 18px;
+    }
+
+    .parking-map a {
+      display: block;
+      text-align: center;
+    }
+
+    .parking-map img {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+    }
+
+    .parking-caption {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 0.95rem;
     }
 
     a {
@@ -243,32 +313,10 @@
         font-size: 1rem;
       }
 
-      .parking-map {
-  margin-top: 18px;
-}
-
-.parking-map-box {
-  background: rgba(255, 255, 255, 0.28);
-  border: 1px solid rgba(216, 208, 195, 0.7);
-  border-radius: 18px;
-  padding: 18px;
-  overflow: hidden;
-}
-
-.parking-map img {
-  display: block;
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-}
-
-.parking-caption {
-  margin-top: 12px;
-  text-align: center;
-  font-size: 0.95rem;
-}
+      .parking-map img {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -326,79 +374,72 @@
       </section>
 
       <section>
-  <h2>Důležité informace</h2>
-  <div class="note-box">
-    <p>
-      Další informace sem budeme průběžně doplňovat, ať už půjde o ubytování,
-      přesun nebo cokoliv dalšího, co se bude hodit vědět předem.
-    </p>
+        <h2>Důležité informace</h2>
+        <div class="note-box">
+          <p>
+            Další informace sem budeme průběžně doplňovat, ať už půjde o ubytování,
+            přesun nebo cokoliv dalšího, co se bude hodit vědět předem.
+          </p>
 
-    <p>
-      Budeme zařizovat i rozvoz po určitou dobu svatby.
-    </p>
+          <p>
+            Budeme zařizovat i rozvoz po určitou dobu svatby.
+          </p>
 
-    <p>
-      Pokud přemýšlíte nad svatebním darem, nejvíce oceníme příspěvek do
-      společného začátku.
-    </p>
-  </div>
-</section>
+          <p>
+            Pokud přemýšlíte nad svatebním darem, nejvíce oceníme příspěvek do
+            společného začátku.
+          </p>
+        </div>
+      </section>
 
-    <section>
-<h2>Potvrzení účasti</h2>
+      <section>
+        <h2>Potvrzení účasti</h2>
 
-<div class="note-box">
+        <div class="note-box">
+          <p>
+            Prosíme o potvrzení účasti do <strong>10. 09. 2026</strong>.
+          </p>
 
-<p>
-Prosíme o potvrzení účasti do <strong>10. 09. 2026</strong>.
-</p>
+          <form action="https://formspree.io/f/xgonnken" method="POST">
+            <div class="form-field">
+              <label for="jmeno">Celé jméno</label>
+              <input type="text" id="jmeno" name="Jméno" required>
+            </div>
 
-<form action="https://formspree.io/f/xgonnken" method="POST">
+            <div class="form-field">
+              <label for="poznamka">Dodatečné informace</label>
+              <textarea id="poznamka" name="Poznámka" placeholder="Alergie, děti, speciální požadavky apod."></textarea>
+            </div>
 
-<label>
-Celé jméno
-<input type="text" name="Jméno" required>
-</label>
+            <button type="submit" class="submit-button">Odeslat potvrzení</button>
+          </form>
 
-<br><br>
+          <p style="margin-top: 16px;">
+            A nebo pokud chcete, můžete nás kontaktovat volnou formou.
+          </p>
+        </div>
+      </section>
 
-<label>
-Dodatečné informace
-<textarea name="Poznámka" placeholder="Alergie, děti, speciální požadavky apod."></textarea>
-</label>
+      <section>
+        <h2>Parkování</h2>
 
-<br><br>
+        <div class="parking-map-box">
+          <p>
+            Parkovat můžete na vyznačených místech na mapě níže.
+          </p>
 
-<button type="submit">Odeslat potvrzení</button>
+          <div class="parking-map">
+            <a href="Parkování_mapa.png" target="_blank">
+              <img src="Parkování_mapa.png" alt="Mapa parkování">
+            </a>
 
-</form>
+            <div class="parking-caption">
+              Červeně jsou vyznačené plochy k parkování.
+            </div>
+          </div>
+        </div>
+      </section>
 
-<p>
-A nebo pokud chcete, můžete nás kontaktovat volnou formou.
-</p>
-
-</div>
-</section>
-
-     <section>
-  <h2>Parkování</h2>
-
-  <div class="parking-map-box">
-    <p>
-      Parkovat můžete na vyznačených místech na mapě níže.
-    </p>
-
-    <div class="parking-map">
-      <a href="Parkování_mapa.png" target="_blank">
-        <img src="Parkování_mapa.png" alt="Mapa parkování">
-      </a>
-
-      <div class="parking-caption">
-        Červeně jsou vyznačené plochy k parkování.
-      </div>
-    </div>
-  </div>
-</section>
       <footer>
         Těšíme se na vás.
       </footer>
