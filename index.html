@@ -244,21 +244,31 @@
       }
 
       .parking-map {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 18px;
+}
+
+.parking-map-box {
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(216, 208, 195, 0.7);
+  border-radius: 18px;
+  padding: 18px;
+  overflow: hidden;
 }
 
 .parking-map img {
+  display: block;
   width: 100%;
-  max-width: 750px;
-  border-radius: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+  border-radius: 14px;
   border: 1px solid var(--line);
 }
 
 .parking-caption {
-  margin-top: 10px;
+  margin-top: 12px;
+  text-align: center;
   font-size: 0.95rem;
-    }
+}
   </style>
 </head>
 <body>
@@ -370,21 +380,24 @@ A nebo pokud chcete, můžete nás kontaktovat volnou formou.
 </div>
 </section>
 
-      <section>
+     <section>
   <h2>Parkování</h2>
 
-  <p>
-    Parkovat můžete na vyznačených místech na mapě níže.
-  </p>
+  <div class="parking-map-box">
+    <p>
+      Parkovat můžete na vyznačených místech na mapě níže.
+    </p>
 
-  <div class="parking-map">
-    <img src="Parkování_mapa.png" alt="Mapa parkování">
+    <div class="parking-map">
+      <a href="Parkování_mapa.png" target="_blank">
+        <img src="Parkování_mapa.png" alt="Mapa parkování">
+      </a>
 
-    <div class="parking-caption">
-      Červeně jsou vyznačená doporučená místa k parkování.
+      <div class="parking-caption">
+        Červeně jsou vyznačené plochy k parkování.
+      </div>
     </div>
   </div>
-
 </section>
       <footer>
         Těšíme se na vás.
