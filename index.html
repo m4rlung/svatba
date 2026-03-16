@@ -7,13 +7,14 @@
   <title>Ruben & Alexandra | Naše svatba</title>
   <style>
     :root {
-      --navy: #18324a;
-      --green: #2f5d50;
+      /* přibližně podle tvé palety */
+      --dark-navy: #44506a;
+      --steel-blue: #6f8fb0;
+      --sage-green: #8ea79b;
+      --ivory: #f4f0e8;
       --white: #ffffff;
-      --offwhite: #f6f8f7;
-      --text: #21303a;
-      --border: #d8e1dd;
-      --shadow: 0 10px 30px rgba(24, 50, 74, 0.08);
+      --text: #3f4a5a;
+      --line: #d9d2c7;
     }
 
     * {
@@ -26,137 +27,125 @@
 
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      line-height: 1.6;
-      background: var(--offwhite);
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--ivory);
       color: var(--text);
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
     }
 
     header {
-      background: linear-gradient(135deg, var(--navy), var(--green));
-      color: var(--white);
       text-align: center;
-      padding: 110px 20px 90px;
+      padding: 90px 20px 70px;
     }
 
-    .hero-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .subtitle {
-      letter-spacing: 2px;
+    .eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-bottom: 12px;
+      color: var(--sage-green);
+      margin-bottom: 18px;
     }
 
-    header h1 {
+    h1 {
       margin: 0;
-      font-size: 3.8rem;
-      font-weight: 600;
+      font-size: 4rem;
+      font-weight: 400;
+      color: var(--dark-navy);
       line-height: 1.1;
     }
 
-    .date {
-      font-size: 1.35rem;
-      margin-top: 18px;
-      margin-bottom: 10px;
+    .hero-date {
+      margin-top: 22px;
+      font-size: 1.2rem;
+      color: var(--dark-navy);
     }
 
-    .welcome {
+    .hero-text {
+      max-width: 620px;
+      margin: 22px auto 0;
       font-size: 1.1rem;
-      max-width: 650px;
-      margin: 20px auto 0;
-      opacity: 0.96;
     }
 
-    main {
-      padding: 50px 20px 70px;
+    .divider {
+      width: 90px;
+      height: 1px;
+      background: var(--sage-green);
+      margin: 34px auto 0;
+      opacity: 0.9;
     }
 
     section {
-      max-width: 950px;
-      margin: 0 auto 28px;
-    }
-
-    .box {
-      background: var(--white);
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
     }
 
     h2 {
-      margin-top: 0;
-      margin-bottom: 20px;
-      color: var(--navy);
-      font-size: 1.8rem;
-    }
-
-    .accent-line {
-      width: 70px;
-      height: 4px;
-      background: var(--green);
-      border-radius: 999px;
-      margin-bottom: 22px;
+      margin: 0 0 18px;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--dark-navy);
     }
 
     p {
-      margin: 0 0 12px;
-      font-size: 1.04rem;
+      margin: 0 0 14px;
+      font-size: 1.08rem;
     }
 
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    .info-grid {
+    .details {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-      margin-top: 10px;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 14px 40px;
+      margin-top: 18px;
     }
 
-    .info-card {
-      background: var(--offwhite);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--green);
-      border-radius: 14px;
-      padding: 18px 18px 16px;
+    .detail-item {
+      padding: 8px 0;
     }
 
-    .info-card strong {
+    .detail-label {
       display: block;
-      color: var(--navy);
-      margin-bottom: 6px;
-      font-size: 0.96rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      color: var(--sage-green);
+      margin-bottom: 4px;
     }
 
-    .timeline-item {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
+    .detail-value {
+      color: var(--dark-navy);
+      font-size: 1.08rem;
     }
 
-    .timeline-item:last-child {
+    .schedule {
+      margin-top: 8px;
+    }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(217, 210, 199, 0.75);
+    }
+
+    .schedule-item:last-child {
       border-bottom: none;
-      padding-bottom: 0;
     }
 
-    .timeline-time {
-      color: var(--green);
+    .schedule-time {
+      color: var(--dark-navy);
       font-weight: 700;
-      margin-right: 8px;
     }
 
     a {
-      color: var(--green);
+      color: var(--steel-blue);
       text-decoration: none;
-      font-weight: 600;
     }
 
     a:hover {
@@ -164,119 +153,131 @@
     }
 
     footer {
-      background: var(--navy);
-      color: var(--white);
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.98rem;
+      padding-top: 40px;
+      border-top: 1px solid var(--line);
+      color: var(--dark-navy);
+      font-size: 1rem;
     }
 
     @media (max-width: 700px) {
       header {
-        padding: 80px 18px 70px;
+        padding: 70px 10px 50px;
       }
 
-      header h1 {
-        font-size: 2.7rem;
+      h1 {
+        font-size: 2.9rem;
       }
 
-      .date {
-        font-size: 1.15rem;
+      .hero-date {
+        font-size: 1.05rem;
       }
 
-      .box {
-        padding: 22px;
+      .details {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
       }
 
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
+      }
+
+      p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="hero-inner">
-      <div class="subtitle">Svatební oznámení</div>
-      <h1>Ruben & Alexandra</h1>
-      <p class="date">10. 10. 2026 ve 12:00</p>
-      <p class="welcome">Budeme moc rádi, když tento výjimečný den prožijete společně s námi.</p>
-    </div>
-  </header>
+  <div class="page">
+    <header>
+      <div class="eyebrow">Svatební oznámení</div>
+      <h1>Ruben &amp; Alexandra</h1>
+      <p class="hero-date">10. 10. 2026 ve 12:00</p>
+      <p class="hero-text">
+        Budeme moc rádi, když tento den prožijete společně s námi.
+      </p>
+      <div class="divider"></div>
+    </header>
 
-  <main>
     <section>
-      <div class="box">
-        <div class="accent-line"></div>
-        <h2>O svatbě</h2>
+      <h2>Kdy a kde</h2>
+      <p>
+        Svatební obřad se bude konat <strong>10. 10. 2026 ve 12:00</strong>
+        v <strong>Evangelickém kostele v Krnově</strong>.
+      </p>
 
-        <div class="info-grid">
-          <div class="info-card">
-            <strong>Novomanželé</strong>
-            Ruben a Alexandra
-          </div>
+      <div class="details">
+        <div class="detail-item">
+          <span class="detail-label">Novomanželé</span>
+          <div class="detail-value">Ruben a Alexandra</div>
+        </div>
 
-          <div class="info-card">
-            <strong>Termín</strong>
-            10. 10. 2026
-          </div>
+        <div class="detail-item">
+          <span class="detail-label">Datum</span>
+          <div class="detail-value">10. 10. 2026</div>
+        </div>
 
-          <div class="info-card">
-            <strong>Čas obřadu</strong>
-            12:00
-          </div>
+        <div class="detail-item">
+          <span class="detail-label">Čas</span>
+          <div class="detail-value">12:00</div>
+        </div>
 
-          <div class="info-card">
-            <strong>Místo</strong>
-            Evangelický kostel Krnov
-          </div>
+        <div class="detail-item">
+          <span class="detail-label">Místo</span>
+          <div class="detail-value">Evangelický kostel Krnov</div>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="box">
-        <div class="accent-line"></div>
-        <h2>Harmonogram</h2>
-
-        <div class="timeline-item">
-          <span class="timeline-time">12:00</span>
-          Svatební obřad
+      <h2>Jak bude den probíhat</h2>
+      <div class="schedule">
+        <div class="schedule-item">
+          <div class="schedule-time">12:00</div>
+          <div>svatební obřad</div>
         </div>
 
-        <div class="timeline-item">
-          <span class="timeline-time">po obřadu</span>
-          Gratulace a společné focení
+        <div class="schedule-item">
+          <div class="schedule-time">po obřadu</div>
+          <div>gratulace a společné focení</div>
         </div>
 
-        <div class="timeline-item">
-          <span class="timeline-time">následně</span>
-          Přesun na další program a společná oslava
+        <div class="schedule-item">
+          <div class="schedule-time">potom</div>
+          <div>společný přesun a další oslava</div>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="box">
-        <div class="accent-line"></div>
-        <h2>Důležité informace</h2>
-        <p>Místem konání obřadu je <strong>evangelický kostel v Krnově</strong>.</p>
-        <p>Další organizační informace lze doplnit později, například parkování, dress code nebo následný přesun hostů.</p>
-      </div>
+      <h2>Důležité informace</h2>
+      <p>
+        Jakmile budeme mít doplněné další informace, přidáme sem i podrobnosti
+        k parkování, případnému přesunu a dalším věcem kolem svatby.
+      </p>
     </section>
 
     <section>
-      <div class="box">
-        <div class="accent-line"></div>
-        <h2>Potvrzení účasti</h2>
-        <p>Prosíme o potvrzení účasti nejpozději do <strong>10. 09. 2026</strong>.</p>
-        <p>Napište nám na e-mail: <a href="mailto:m4rlung@icloud.com">m4rlung@icloud.com</a></p>
-      </div>
+      <h2>Potvrzení účasti</h2>
+      <p>
+        Prosíme o potvrzení účasti do <strong>10. 09. 2026</strong>.
+      </p>
+      <p>
+        Napsat nám můžeš na e-mail
+        <a href="mailto:m4rlung@icloud.com">m4rlung@icloud.com</a>,
+        nebo nás klidně kontaktuj volnou formou.
+      </p>
     </section>
-  </main>
 
-  <footer>
-    <p>Těšíme se na společný den ♥</p>
-  </footer>
+    <footer>
+      Těšíme se na vás.
+    </footer>
+  </div>
 </body>
 </html>
